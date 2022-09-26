@@ -1,19 +1,27 @@
 import React from "react";
 
-export default function TodoList() {
+import Todo from "../components/Todo"
+
+
+
+export default function TodoList({ todos, todoDelete, todoCompleted }) {
+
+
     return(
 <div>
-<h1> Todo List </h1>
-<div className="card">
-    <div className="card-body">
-        <h3 className="card-title">
-          Titulo de la Tarea
-        </h3>
-<p className="card-text">
-   Descripcion de la Tarea
-</p>
-        </div>
-    </div>
+<h1 className="text-right"> Todo List </h1>
+
+{ 
+    todos.map(item => 
+    
+    <Todo 
+      key={item.id}
+      todo={item}
+      todoDelete={todoDelete}
+      todoCompleted={todoCompleted}  
+      /> )
+}
+
 </div>
     )
 }
