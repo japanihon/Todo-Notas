@@ -12,7 +12,7 @@ return (
           className="btn btn-sm btn-outline-success ml-2"
           onClick={() => todoCompleted(todo.id)}
           >
-           Terminar
+           { todo.completed ? 'Terminado' : 'Terminar'}
           </button>
         </h3>
 <p className="card-text me-2 text-end">

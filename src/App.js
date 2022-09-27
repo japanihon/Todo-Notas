@@ -13,7 +13,7 @@ const initialTodos = [
       title: 'Todo #1',
       description: 'Descripcion del todo #1',
       completed: false
-  },
+  }, 
   {
       id: 2,
       title: 'Todo #2',
@@ -39,6 +39,17 @@ function App() {
       ))
   }
 
+  function todoAdd(todo) {
+
+    const newTodo = {
+      id: Date.now(),
+      ...todo,
+      completed: false
+    }
+
+    setTodos([...todos, newTodo])
+  }
+
 
 
   return (
@@ -57,7 +68,10 @@ function App() {
         </div>
     
         <div className="col-4" >
-        <TodoForm />
+        <TodoForm 
+          todoAdd={todoAdd}
+
+        />
           
         </div>
       </div>
